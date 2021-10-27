@@ -1,2 +1,2 @@
 # TestHarness
-## Object Orientied Design
+## Object Oriented Design
