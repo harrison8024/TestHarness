@@ -2,5 +2,5 @@
 using namespace std;
 
 int main() {
-	cout << "Test Harness working..." << endl;
+	cout << "Test Harness is working..." << endl;
 }
