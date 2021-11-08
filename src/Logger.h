@@ -1,16 +1,37 @@
+#ifndef LOGGER_H
+#define LOGGER_H
+
 #include <string>
-using namespace std;
+using std::string;
+
+#include <sstream>
+using std::stringstream;
 
 class Logger
 {
 	// Just a Template, everything is subject to change.
 public:
-	int logLevel;
-	string logFile;
+	enum LogLevel { HIGH, MED, LOW }; // LOW = just pass/fail; MED = LOW + Failure Messages; HIGH = MED + Time stamp
 
-	void logInfo();
-	void logDetails();
-	void logError();
+	Logger(); // Logger constructor
+	void setLogLevel(LogLevel);
+
+	void logTestName(string, int);
+	void logInfo(string);
+	void logError(string);
 	void logTime();
+
+
+	
+	string getReport();
+	void clrReport();
+
+
+
+
+private:
+	LogLevel logLevel = LogLevel::HIGH; // log level determines how much info is recorded. Default to LOW which is just Pass/Fail
+	stringstream report;
 };
 
+#endif
