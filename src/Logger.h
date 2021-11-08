@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Logger
@@ -6,11 +7,12 @@ class Logger
 	// Just a Template, everything is subject to change.
 public:
 	int logLevel;
-	string logFile;
+	//string logFile;
 
-	void logInfo();
-	void logDetails();
-	void logError();
+	Logger(int loglevel);
+	void logInfo(string message);
+	void logDetails(string message);
+	void logError(string message);
 	void logTime();
 };
 
