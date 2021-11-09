@@ -1,18 +1,19 @@
-
 #include "TestManager.h"
+#include "Logger.h"
 #include <iostream>
 
-TestManager::TestManager(int loglevel)
-	:logLevel{ loglevel }, logger(loglevel) {}
+TestManager::TestManager(int loglevel) {
+	this->logLevel = loglevel;
+	logger.setLogLevel(loglevel);
+}
 
-
-bool TestManager::performSingleTest(ITest &testObject) {
+bool TestManager::performSingleTest(ITest& testObject) {
+	logger.logTestName("Test Name", 0);
 	logger.logInfo("Perform the single test.");
 	bool testResult;
 
 	try
 	{
-		
 		testResult = testObject.test();
 		if (testResult) {
 			logger.logInfo("The test object passed the test.");
@@ -20,7 +21,7 @@ bool TestManager::performSingleTest(ITest &testObject) {
 		else {
 			logger.logError("The test object failed the test!");
 		}
-		
+		logger.logTime();
 	}
 	catch (const std::exception& exc)
 	{
@@ -29,16 +30,6 @@ bool TestManager::performSingleTest(ITest &testObject) {
 		testResult = false;
 	}
 
+	std::cout << logger.getReport();
 	return testResult;
-
-
 }
-
-
-//void TestManager::run(std::string dllPath) {
-//	// get the test object using dllPath -> loadDll
-//
-//
-//	// call performSingleTest
-//}
-

@@ -7,11 +7,12 @@
 // Author:        Fang Wang, Syracuse University                       //
 /////////////////////////////////////////////////////////////////////////
 
+#ifndef TEST_MANAGER_H
+#define TEST_MANAGER_H
+
 #include <string>
 #include "ITest.h"
 #include "Logger.h"
-//#include "testfile.h"
-
 
 class TestManager
 {
@@ -21,9 +22,8 @@ public:
 	Logger logger;
 	TestManager(int loglevel);
 
-	bool performSingleTest(ITest &testObject);
+	bool performSingleTest(ITest& testObject);
 	//void run(std::string dllPath);                   // entry function of the TestManager
-
-
 };
 
+#endif /* TEST_MANAGER_H */

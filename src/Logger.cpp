@@ -1,25 +1,13 @@
 #include "Logger.h"
-
 #include <iostream>
-using std::cin;
-using std::cout;
-using std::endl;
-
-#include <string>
-using std::string;
-using std::to_string;
-
-#include <sstream>
-using std::stringstream;
-
 #include <ctime>
-using std::time_t;
+using namespace std;
 
 Logger::Logger() {
 }
 
 // Setting the log level HIGH, MED, LOW
-void Logger::setLogLevel(LogLevel newLogLevel) {
+void Logger::setLogLevel(int newLogLevel) {
 	logLevel = newLogLevel;
 }
 
@@ -60,9 +48,6 @@ void Logger::clrReport() {
 	report.str(string());
 }
 
-
-
-
 // Overload log method
 //void Logger::log(bool pass, string error) {
 //	string logString = "";
@@ -79,7 +64,7 @@ void Logger::clrReport() {
 //
 //	// Log Level MED: LOW + Error Message
 //	if ((logLevel == MED || logLevel == HIGH) && !pass) {
-//		logString = logString + "Error Message:  " + error; 
+//		logString = logString + "Error Message:  " + error;
 //	}
 //
 //	// Log Level HIGH: MED + TimeStamp

@@ -124,10 +124,6 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DllLoader.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="testfile.cpp" />
     <ClCompile Include="TestManager.cpp" />
@@ -135,7 +131,6 @@
     <ClCompile Include="TestPerformer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DllLoader.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="ITest.h" />
     <ClInclude Include="testfile.h" />

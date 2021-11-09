@@ -18,13 +18,11 @@
 #define TEST_API __declspec(dllimport)
 #endif
 
-#include <iostream>s
+#include <iostream>
 class ITest {
 public:
 	virtual ~ITest() {};
 	virtual bool test() = 0;
-	
 };
 
-
-#endif
+#endif /* ITEST_H */

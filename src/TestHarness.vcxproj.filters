@@ -30,9 +30,6 @@
     <ClCompile Include="testfile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DllLoader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestManager.h">
@@ -48,9 +45,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="testfile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DllLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
