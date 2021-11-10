@@ -7,8 +7,8 @@ TestManager::TestManager(int loglevel) {
 	logger.setLogLevel(loglevel);
 }
 
-bool TestManager::performSingleTest(ITest& testObject) {
-	logger.logTestName("Test Name", 0);
+bool TestManager::performSingleTest(Testable& testObject) {
+	logger.logTestName(testObject.testName, testCounter++);
 	logger.logInfo("Perform the single test.");
 	bool testResult;
 

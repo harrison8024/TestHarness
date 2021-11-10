@@ -13,16 +13,18 @@
 #include <string>
 #include "ITest.h"
 #include "Logger.h"
+#include "Testable.h"
 
 class TestManager
 {
 	// Just a Template, everything is subject to change.
 public:
 	int logLevel;
+	int testCounter=0;
 	Logger logger;
 	TestManager(int loglevel);
 
-	bool performSingleTest(ITest& testObject);
+	bool performSingleTest(Testable& testObject);
 	//void run(std::string dllPath);                   // entry function of the TestManager
 };
 
