@@ -44,9 +44,6 @@
     <ClInclude Include="ITest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="testfile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TestObjects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
