@@ -15,7 +15,7 @@ struct BadStruct { virtual void BadStructFuction(); };
 void throw_e();
 void test_throw_e() throw(std::bad_exception);
 
-
+bool TestDivide();
 bool TestTrue();
 bool TestFalse();
 bool TestBadAlloc();

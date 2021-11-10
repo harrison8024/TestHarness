@@ -6,5 +6,5 @@ Testable::Testable(string testName, function<bool()> callable) {
 }
 
 bool Testable::test() {
-	return this->callable();
+	return callable();
 }

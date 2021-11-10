@@ -126,9 +126,7 @@
   <ItemGroup>
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Testable.cpp" />
-    <ClCompile Include="testfile.cpp" />
     <ClCompile Include="TestManager.cpp" />
-    <ClCompile Include="TestHarness.cpp" />
     <ClCompile Include="TestObjects.cpp" />
     <ClCompile Include="TestPerformer.cpp" />
   </ItemGroup>

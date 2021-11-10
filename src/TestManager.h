@@ -20,7 +20,7 @@ class TestManager
 	// Just a Template, everything is subject to change.
 public:
 	int logLevel;
-	int testCounter=0;
+	int testCounter = 0;
 	Logger logger;
 	TestManager(int loglevel);
 

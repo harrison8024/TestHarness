@@ -9,23 +9,32 @@ Logger::Logger() {
 // Setting the log level HIGH, MED, LOW
 void Logger::setLogLevel(int newLogLevel) {
 	logLevel = newLogLevel;
+	string line = "\n___________________________________________________________\n\n";
+	report << line << "***************  SETTING LOG LEVEL: " << levelStr[newLogLevel] << "  ***************\n" << endl;
 }
 
 // Logging any message into the report
 void Logger::logInfo(string message) {
-	report << message << endl;
+	report << "[INFO]: " << message << endl;
 }
 
 // Logging the Test Name to the report
 void Logger::logTestName(string name, int testNumber) {
-	string dispMessage = "___________________________________________________________\n  Running Test #" + to_string(testNumber) + ": " + name + "\n___________________________________________________________\n";
-	report << dispMessage << endl;
+	string line = "___________________________________________________________\n";
+	string title = "Running Test #" + to_string(testNumber) + ": " + name + "\n";
+	report << line << title << line << endl;
 }
 
 // Logging the error message to the report
 void Logger::logError(string error) {
-	string dispMessage = "Error Message: ";
+	string dispMessage = "[ERROR]: ";
 	dispMessage = dispMessage + error;
+	report << dispMessage << endl;
+}
+
+void Logger::logException(string exception) {
+	string dispMessage = "[EXCEPTION]: ";
+	dispMessage = dispMessage + exception;
 	report << dispMessage << endl;
 }
 
@@ -47,30 +56,3 @@ string Logger::getReport() {
 void Logger::clrReport() {
 	report.str(string());
 }
-
-// Overload log method
-//void Logger::log(bool pass, string error) {
-//	string logString = "";
-//	time_t now = time(0);
-//	string dateTime = ctime(&now);
-//
-//	// Log Level LOW: Only Display Test Pass or Fail.
-//	if (pass) {
-//		logString = "Test Passed.	\n";
-//	}
-//	else {
-//		logString = "Test Failed.	\n";
-//	}
-//
-//	// Log Level MED: LOW + Error Message
-//	if ((logLevel == MED || logLevel == HIGH) && !pass) {
-//		logString = logString + "Error Message:  " + error;
-//	}
-//
-//	// Log Level HIGH: MED + TimeStamp
-//	if (logLevel == HIGH) {
-//		logString = logString + "Date / Time: " + dateTime;
-//	}
-//
-//	report << logString << endl;
-//}

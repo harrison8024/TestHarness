@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TestHarness.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TestManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -25,9 +22,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="testfile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TestObjects.cpp">

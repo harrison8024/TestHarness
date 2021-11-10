@@ -6,10 +6,8 @@
 #include "TestObjects.h"
 
 int main() {
-
 	// Initialize Classes
 	TestManager testManager(Logger::LOW);
-	Logger logger;
 
 	// Load Testables
 	Testable t1("Test True", TestTrue);
@@ -22,6 +20,7 @@ int main() {
 	Testable t8("Test Bad Exception", TestBadException);
 	Testable t9("Test Add", TestAdd);
 	Testable t10("Test Allocation", TestAllocate);
+	Testable t11("Test Divide Zero", TestDivide);
 
 	// logLevel = LOW
 	testManager.performSingleTest(t1);
@@ -35,9 +34,37 @@ int main() {
 	testManager.performSingleTest(t9);
 	testManager.performSingleTest(t10);
 
+
 	// logLevel = MEDIUM
-	testManager.logLevel = Logger::MED;
+	testManager.logLevel = Logger::MEDIUM;
+	testManager.logger.setLogLevel(Logger::MEDIUM);
+
+	testManager.performSingleTest(t1);
+	testManager.performSingleTest(t2);
+	testManager.performSingleTest(t3);
+	testManager.performSingleTest(t4);
+	testManager.performSingleTest(t5);
+	testManager.performSingleTest(t6);
+	testManager.performSingleTest(t7);
+	testManager.performSingleTest(t8);
+	testManager.performSingleTest(t9);
+	testManager.performSingleTest(t10);
 
 	// logLevel = HIGH
 	testManager.logLevel = Logger::HIGH;
+	testManager.logger.setLogLevel(Logger::HIGH);
+
+	testManager.performSingleTest(t1);
+	testManager.performSingleTest(t2);
+	testManager.performSingleTest(t3);
+	testManager.performSingleTest(t4);
+	testManager.performSingleTest(t5);
+	testManager.performSingleTest(t6);
+	testManager.performSingleTest(t7);
+	testManager.performSingleTest(t8);
+	testManager.performSingleTest(t9);
+	testManager.performSingleTest(t10);
+
+	std::cout << testManager.logger.getReport();
+
 }
