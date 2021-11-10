@@ -1,6 +1,5 @@
 #include "TestPerformer.h"
 #include "TestManager.h"
-#include "testfile.h"
 #include "Logger.h"
 #include "Testable.h"
 #include "TestObjects.h"
