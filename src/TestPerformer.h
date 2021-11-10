@@ -1,16 +1,4 @@
-#include <string>
-using namespace std;
+#ifndef TEST_PERFORMER_H
+#define TEST_PERFORMER_H
 
-class TestPerformer
-{
-	// Just a Template, everything is subject to change.
-public:
-	int logLevel;
-	int TestArr;
-	int ResultArr;
-
-	void loadTestFile();
-	void displayResult();
-	void executeTest();
-};
-
+#endif /* TEST_PERFORMER_H */
