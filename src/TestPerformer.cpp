@@ -19,7 +19,6 @@ int main() {
 	Testable t8("Test Bad Exception", TestBadException);
 	Testable t9("Test Add", TestAdd);
 	Testable t10("Test Allocation", TestAllocate);
-	Testable t11("Test Divide Zero", TestDivide);
 
 	// logLevel = LOW
 	testManager.performSingleTest(t1);

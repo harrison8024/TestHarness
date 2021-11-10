@@ -28,13 +28,6 @@ bool TestAdd()
 	return true;
 }
 
-bool TestDivide()
-{
-	int i = 1;
-	int j = 0;
-	return true;
-}
-
 bool TestBadAlloc()
 {
 	std::bad_alloc x;
