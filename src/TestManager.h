@@ -1,31 +1,51 @@
 /////////////////////////////////////////////////////////////////////////
-// TestManager.h													   //
-// ver 1.0       The main test execution part of the Test Harness      //
-//                                                                     //
-// Language:      C++					                               //
-// Application:   Project for CSE687 - Object Oriented Design          //
-// Author:        Fang Wang, Syracuse University                       //
-/////////////////////////////////////////////////////////////////////////
+// Fang Wang, Syracuse University
+// CSE687 object orriented Design
+//
+// Project: Test Harness
+// TestManager.h Definition of TestManager class
+#pragma once
+#ifndef TESTHARNESS_H
+#define TESTMANAGER_H
 
-#ifndef TEST_MANAGER_H
-#define TEST_MANAGER_H
+#include "Process.h"
+#include "../Utils/MsgPassingComm/CommHeader.h"
+#include "../Utils/Sockets/Sockets.h"
+#include "../Utils/Cpp11-BlockingQueue/Cpp11-BlockingQueue.h"
+#include "../Utils/Message/Message.h"
+#include "../Utils/Utilities/XmlReader.h"
+#include "../Utils/Utilities/FileUtilities.h"
+#include "../TestWorker/TestWorker.h"
+#include "../Utils/FileSystem/FileSystem.h"
+#include <vector>
 
-#include <string>
-#include "ITest.h"
-#include "Logger.h"
-#include "Testable.h"
-
-class TestManager
+using namespace MsgPassingCommunication;
+namespace Testing
 {
-	// Just a Template, everything is subject to change.
-public:
-	int logLevel;
-	int testCounter = 0;
-	Logger logger;
-	TestManager(int loglevel);
+	class TestManager
+	{
+	public:
+		TestManager(EndPoint from);
+		~TestManager() = default;
+		void start();
+		void wait();
+		void stop();
+		void sendMessage(MsgPassingCommunication::Message msg);
+		void recvMessages();
+		void dispatchMessages();
+		void setPath(std::string& send_path, std::string& save_path);
+		std::string getSendPath();
+		std::string getSavePath();
+	private:
+		BlockingQueue<MsgPassingCommunication::Message> readyQ_;
+		BlockingQueue<MsgPassingCommunication::Message> requestQ_;
+		std::thread recvr;
+		std::thread dspat;
+		Comm comm_;
+		EndPoint to_;
+		EndPoint from_;
+		std::vector<Process> children_;
+	};
+}
+#endif
 
-	bool performSingleTest(Testable& testObject);
-	//void run(std::string dllPath);                   // entry function of the TestManager
-};
-
-#endif /* TEST_MANAGER_H */
