@@ -4,9 +4,7 @@
 #include <functional>
 #include <Windows.h>
 
-
 using namespace std;
-
 
 Logger::Logger() {
 }
